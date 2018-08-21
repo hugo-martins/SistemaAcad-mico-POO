@@ -1,4 +1,3 @@
-package projetct.academia;
 public class contatoNaoExisteException extends Exception {
     public contatoNaoExisteException(){
         super();
