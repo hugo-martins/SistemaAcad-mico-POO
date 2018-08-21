@@ -1,4 +1,4 @@
-
+package projetct.academia;
 
 public class contatoJaExisteException extends Exception {
     public contatoJaExisteException(){
