@@ -1,11 +1,11 @@
-package projetct.academia;
-
 public class contatoJaExisteException extends Exception {
-    public contatoJaExisteException(){
+
+    public contatoJaExisteException() {
         super();
     }
-    public contatoJaExisteException(String msgErro){
+
+    public contatoJaExisteException(String msgErro) {
         super(msgErro);
     }
-    
+
 }

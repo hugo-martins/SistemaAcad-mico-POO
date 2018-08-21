@@ -1,67 +1,63 @@
-package projetct.academia;
-
 public class Equipamento {
-	private String nome;
-	private String tipoEquipamento;
-	private double pesoMaterial;
-	private int ID;
-	private String descricao;
-	
-	public Equipamento(String nome, String tipoEquipamento, double pesoMaterial, int id, String descricao) {
-		super();
-		this.nome = nome;
-		this.tipoEquipamento = tipoEquipamento;
-		this.pesoMaterial = pesoMaterial;
-		this.ID = id;
-		this.descricao = descricao;
-	}
 
-	public String getNome() {
-		return nome;
-	}
+    private String nome;
+    private String tipoEquipamento;
+    private double pesoMaterial;
+    private int ID;
+    private String descricao;
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+    public Equipamento(String nome, String tipoEquipamento, double pesoMaterial, int id, String descricao) {
+        super();
+        this.nome = nome;
+        this.tipoEquipamento = tipoEquipamento;
+        this.pesoMaterial = pesoMaterial;
+        this.ID = id;
+        this.descricao = descricao;
+    }
 
-	public String getTipoEquipamento() {
-		return tipoEquipamento;
-	}
+    public String getNome() {
+        return nome;
+    }
 
-	public void setTipoEquipamento(String tipoEquipamento) {
-		this.tipoEquipamento = tipoEquipamento;
-	}
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-	public double getPesoMaterial() {
-		return pesoMaterial;
-	}
+    public String getTipoEquipamento() {
+        return tipoEquipamento;
+    }
 
-	public void setPesoMaterial(double pesoMaterial) {
-		this.pesoMaterial = pesoMaterial;
-	}
+    public void setTipoEquipamento(String tipoEquipamento) {
+        this.tipoEquipamento = tipoEquipamento;
+    }
 
-	public int getID() {
-		return ID;
-	}
+    public double getPesoMaterial() {
+        return pesoMaterial;
+    }
 
-	public void setID(int id) {
-		ID = id;
-	}
+    public void setPesoMaterial(double pesoMaterial) {
+        this.pesoMaterial = pesoMaterial;
+    }
 
-	public String getDescricao() {
-		return descricao;
-	}
+    public int getID() {
+        return ID;
+    }
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
+    public void setID(int id) {
+        ID = id;
+    }
 
-	
-	public String toString() {
-		return "Equipamento de nome: " + nome + "\ntipoEquipamento: " + tipoEquipamento + "\npesoMaterial: " + pesoMaterial
-				+ "\nID: " + ID + "\ndescricao: " + descricao;
-	}
-	
-	
-	
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public String toString() {
+        return "Equipamento de nome: " + nome + "\ntipoEquipamento: " + tipoEquipamento + "\npesoMaterial: " + pesoMaterial
+                + "\nID: " + ID + "\ndescricao: " + descricao;
+    }
+
 }
