@@ -1,5 +1,3 @@
-package projetct.academia;
-
 public class Contas {
 	private double aReceber;
 	private double aPagar;

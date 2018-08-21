@@ -1,4 +1,3 @@
-package projetct.academia;
 import java.util.List;
 
 
@@ -9,6 +8,7 @@ public class Contato {
    private List<Contato> cadastroEmail;
    private List<Contato> cadastroTelefone;
    
+   public Contato(){}
 
     public Contato(String email, double telefone,List<Contato> cadastroEmail, List<Contato> cadastroTelefone) {
         this.email = email;

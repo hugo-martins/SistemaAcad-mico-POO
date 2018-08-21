@@ -1,5 +1,3 @@
-package projetct.academia;
-
 public class Endereco {
 	private String logradouro;
 	private String numero;

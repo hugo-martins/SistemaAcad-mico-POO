@@ -1,22 +1,17 @@
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  *
  * @author Will
  */
-public class Funcionario{
+public class Funcionario extends Pessoa{
 	private double salario;//Salario do Funcionario
 	private String cargaHoraria;//Carga Horaria do funcionario
-	//private static final String tipo = "funcionario";//Variavel para definir que a pessoa é um funcionario
-	private List<Pessoa> funcionarios = new ArrayList<Pessoa>();//Lista de funcionarios
-        
+	
 	public Funcionario(){}//Construtor vazio
 	
-	public Funcionario(double salario, String cargaHoraria, Pessoa pessoa){//Construtor
+	public Funcionario(int id, String nome, String cpf, Contato contato, Endereco endereco, String data_nascimento,double salario, String cargaHoraria){//Construtor
+		super(id, nome, cpf, contato, endereco, data_nascimento);
 		this.salario = salario;
 		this.cargaHoraria = cargaHoraria;
-                this.funcionarios.add(pessoa);
 	}
 	
 	public void setSalario(double salario) {//pega o salario do funcionario
@@ -34,16 +29,8 @@ public class Funcionario{
 	public String getCargaHoraria() {//retorna a carga horaria do funcionario
 		return this.cargaHoraria;
 	}
-        
-        public void setFuncionario(Pessoa pessoa){//pega o funcionario
-            this.funcionarios.add(pessoa);
-        }
-        
-        public List<Pessoa> getFuncionarios(){//retorna a lista de funcionario
-            return this.funcionarios;
-        }
 	
 	public String toString() {//retorna os dados do Funcionario
-		return "";
+		return "\nID: "+this.getId()+"\nNome: "+super.getNome()+"\nCPF: "+super.getCpf()+"\nContato: "+super.getContato()+"\nEndereco: "+super.getEndereco()+"\nSalario: "+this.salario+"\nCarga Horaria: "+this.cargaHoraria;
 	}
 }//fim da classe Funcionario
