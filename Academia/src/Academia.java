@@ -102,7 +102,7 @@ public class Academia {
 
 	public void removerFuncionario (String CpfFuncionario) {
 		for(Funcionario f: this.funcionarios)
-			if(f.getCPF().equals(CpfFuncionario)) {
+			if(f.getCpf().equals(CpfFuncionario)) {
 				funcionarios.remove(f);
 			}
 	}
@@ -126,7 +126,7 @@ public class Academia {
 	
 	public String pagarFuncionario (String CPF) {
 		for (Funcionario f: this.funcionarios) {
-			if (f.getCPF().equals(CPF))
+			if (f.getCpf().equals(CPF))
 				if (!f.isPagamento())
 					f.setPagamento(true);
 					this.contas.setNegativoAPagar(f.getSalario());
@@ -142,7 +142,7 @@ public class Academia {
 
 	public String clientePagar (String CPF) {
 		for (Cliente c: this.clientes) {
-			if (c.getCPF().equals(CPF))
+			if (c.getCpf().equals(CPF))
 				if (!c.isPagamento())
 					c.setPagamento(true);
 					this.contas.setNegativoReceber(c.getValor());

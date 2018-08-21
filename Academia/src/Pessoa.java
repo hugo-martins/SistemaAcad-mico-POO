@@ -8,13 +8,12 @@ public abstract class Pessoa{
 	private String cpf;//cpf da pessoa
 	private Contato contato;//variavel que vai pegar o contato da pessoa
 	private Endereco endereco;//variavel que vai pegar o endereco da pessoa
-	private String tipo;//Para diferenciar se a pessoa é cliente ou funcionario
 	private String data_nascimento;//data de nascimento da pessoa
 
 
 	public Pessoa(){}//construtor vazio
 
-	public Pessoa(int id, String nome, String cpf, Contato contato, Endereco endereco, String data_nascimento,String tipo){//construtor que recebe as informações
+	public Pessoa(int id, String nome, String cpf, Contato contato, Endereco endereco, String data_nascimento){//construtor que recebe as informações
 
 		this.id = id;
 		this.nome = nome;
@@ -22,7 +21,6 @@ public abstract class Pessoa{
 		this.contato = contato;
 		this.endereco = endereco;
 		this.data_nascimento = data_nascimento;
-		this.tipo = tipo;
 	}
 	
 	public void setId(int id){//pega o id
@@ -54,15 +52,7 @@ public abstract class Pessoa{
 	}
 
 	public Contato getContato(){//retorna o contato da pessoa
-		return this.contato;
-	}
-	
-	public void setTipo(String tipo) {//pega o tipo de pessoa
-		this.tipo = tipo;
-	}
-	
-	public String getTipo() {//retorna o tipo de pessoa
-		return this.tipo;
+            return this.contato;
 	}
 
 	public void setEndereco(Endereco endereco){//pega o endereco da pessoa
@@ -75,4 +65,3 @@ public abstract class Pessoa{
 	
 	
 }//fim da classe Pessoa
-
