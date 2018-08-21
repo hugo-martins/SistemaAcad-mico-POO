@@ -1,5 +1,3 @@
-package projetct.academia;
-
 import java.util.ArrayList;
 import java.util.List;
 
