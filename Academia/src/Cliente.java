@@ -1,8 +1,3 @@
-
-/**
- *
- * @author Will
- */
 public class Cliente extends Pessoa {
 	private Plano plano;// Plano que o cliente ira contratar
 	private boolean pagamento;
@@ -45,7 +40,7 @@ public class Cliente extends Pessoa {
 				"\nLogradouro: " + super.getEndereco().getLogradouro() +
 				"\nComplemento: " + super.getEndereco().getComplemento() +
 				"\nNúmero: " +  super.getEndereco().getNumero() +
-				"== Plano ==" +
+				"\n== Plano ==" +
 				"\nPlano contratado: " + this.plano.nomePlano(plano.getPlano()) +
 				"\nValor do plano: " + this.plano.getValorPlano();
 	}
