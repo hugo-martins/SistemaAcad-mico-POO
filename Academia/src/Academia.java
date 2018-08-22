@@ -32,8 +32,23 @@ public class Academia {
 
     Academia(String nome) {
         this.nome = nome;
+        this.contato = new Contato();
+        this.endereco = new Endereco();
+        this.clientes = new ArrayList<Cliente>();
+        this.funcionarios = new ArrayList<Funcionario>();
+        this.contas = new Contas();
+        
     }
 
+    Academia(String nome, Endereco endereco, Contato contato) {
+        this.nome = nome;
+        this.contato = contato;
+        this.endereco = endereco;
+        this.clientes = new ArrayList<Cliente>();
+        this.funcionarios = new ArrayList<Funcionario>();
+        this.contas = new Contas();
+        
+    }
     public String getNome() {
         return nome;
     }

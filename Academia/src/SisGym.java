@@ -5,8 +5,26 @@ import javax.swing.JOptionPane;
 public class SisGym {
 
     public static void main(String[] args) {
-        Academia academia = new Academia("Physicus");
-
+        
+        
+        String nomeAcademia = JOptionPane.showInputDialog("Digite o nome da Academia");
+        int dddAcademia = Integer.parseInt(JOptionPane.showInputDialog("Digite o DDD da Academia"));
+        int foneAcademia = Integer.parseInt(JOptionPane.showInputDialog("Digite o Telefone da Academia"));
+        Telefone telefoneAcademia = new Telefone(dddAcademia, foneAcademia);
+        String emailAcademia = JOptionPane.showInputDialog("Digite o email da Academia");
+        Contato contatoAcademia = new Contato (telefoneAcademia, emailAcademia);
+        String logradouroAcademia = JOptionPane.showInputDialog("Digite o Logradouro da Academia");
+        int numeroAcademia = Integer.parseInt(JOptionPane.showInputDialog("Digite o Logradouro da Academia"));
+        String complementoAcademia = JOptionPane.showInputDialog("Digite o Complemento");
+        String bairroAcademia = JOptionPane.showInputDialog("Digite o Bairro da Academia");
+        String cidadeAcademia = JOptionPane.showInputDialog("Digite a Cidade da Academia");
+        String estadoAcademia = JOptionPane.showInputDialog("Digite o Estado da Academia");
+        
+        Endereco enderecoAcademia = new Endereco (logradouroAcademia, numeroAcademia, complementoAcademia, bairroAcademia, cidadeAcademia, estadoAcademia);
+        
+        Academia academia = new Academia(nomeAcademia, enderecoAcademia, contatoAcademia); 
+    
+        
         boolean sair = false;
         while (!sair) {
             int escolha = Integer.parseInt(JOptionPane.showInputDialog("Menu Academia " + academia.getNome() + "\n"
@@ -24,9 +42,13 @@ public class SisGym {
                     while (!sairAcademia) {
 
                         int escolhaAcademia = Integer.parseInt(JOptionPane.showInputDialog("Menu Academia " + academia.getNome() + "\n"
-                                + "1 - Contas a receber\n"
-                                + "2 - Contas a pagar\n"
-                                + "0 - Sair"));
+                                + "1 - Dados\n"
+                                + "2 - Alterar Nome\n"
+                                + "3 - Alterar Telefone\n"
+                                + "4 - Alterar Endereço\n"
+                        		+ "5 - Contas a receber\n"
+                                + "6 - Contas a pagar\n"
+                                + "0 - Voltar"));
 
                         switch (escolhaAcademia) {
 
@@ -51,7 +73,7 @@ public class SisGym {
                                 + "2 - Listar\n"
                                 + "3 - A Pagar\n"
                                 + "4 - Efetuar Pagamento \n"
-                                + "0 - Sair"));
+                                + "0 - Voltar"));
 
                         switch (escolhaFuncionario) {
 
@@ -115,7 +137,7 @@ public class SisGym {
                                 + "2 - Listar\n"
                                 + "3 - A Receber\n"
                                 + "4 - Efetuar Pagamento \n"
-                                + "0 - Sair"));
+                                + "0 - Voltar"));
 
                         switch (escolhaFuncionario) {
 
