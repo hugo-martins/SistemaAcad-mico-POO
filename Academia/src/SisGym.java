@@ -270,8 +270,13 @@ public class SisGym {
                                 break;
 
                             case 4:
-                                String cpfClientePagar = JOptionPane.showInputDialog("CPF: ");
-                                JOptionPane.showMessageDialog(null, academia.clientePagar(cpfClientePagar));
+                               try {
+                                    String cpfClientePagar = JOptionPane.showInputDialog("CPF: ");
+                                    JOptionPane.showMessageDialog(null, academia.clientePagar(cpfClientePagar));
+                                } catch (cpfNaoExisteException e) {
+                                    JOptionPane.showMessageDialog(null, e.getMessage());
+                                    String cpfClientePagar = JOptionPane.showInputDialog("CPF: ");
+                                }
                                 break;
 
                             case 0:
