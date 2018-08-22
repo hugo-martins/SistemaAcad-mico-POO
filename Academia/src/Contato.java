@@ -1,43 +1,32 @@
-import java.util.ArrayList;
-import java.util.List;
 
 public class Contato {
+
     private Telefone telefone;
-    private List<Pessoa> cadastroContato;
-
-    public Contato(Telefone telefone, List<Pessoa> cadastroContato) {
-        this.telefone = telefone;
-        this.cadastroContato = cadastroContato;
-    }
-
-    public Contato() {
-        this.cadastroContato = new ArrayList<Pessoa>();
-    }
+    private String email;
     
-
-    public void addContato(Pessoa pessoa) throws contatoJaExisteException {
-
-        for (Pessoa p : this.cadastroContato) {
-            if (p.getNome().toLowerCase().equals(pessoa.getNome().toLowerCase())) {
-                throw new contatoJaExisteException("O você que você tentou cadastrar já existe na nossa base de dados." + pessoa.getNome());
-            } else {
-                this.cadastroContato.add(p);
-            }
-
-        }
+    public Contato(){
+        
     }
 
-    public Pessoa pesquisarContato(String nomePessoa) throws contatoNaoExisteException {
-        boolean existir = false;
-        for (Pessoa p : this.cadastroContato) {
-            if (p.getNome().toLowerCase().equals(nomePessoa.toLowerCase())) {
-                existir = true;
-
-                return p;
-            }
-        }
-
-        throw new contatoNaoExisteException("A pessoa que você pesquisou não está cadastrado na base de dados.");
-
+    public Contato(Telefone telefone, String email) {
+        this.telefone = telefone;
+        this.email = email;
     }
+
+    public void setTelefone(Telefone telefone) {
+        this.telefone = telefone;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Telefone getTelefone() {
+        return telefone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
 }
