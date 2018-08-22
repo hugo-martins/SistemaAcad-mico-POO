@@ -27,7 +27,7 @@ public class Cliente extends Pessoa {
         return pagamento;
     }
 
-    public void setPagemento(boolean b){//muda o pagamento
+    public void setPagamento(boolean b){//muda o pagamento
         this.pagamento = b;
     }
 
