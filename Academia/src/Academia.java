@@ -11,6 +11,7 @@ public class Academia {
     private List<Funcionario> funcionarios;
     private Contas contas;
     private List<Cliente> clientesDevendo = new ArrayList<>();
+    private List<Equipamento> equipamentos;
 
     public Academia() {
         this.nome = " ";
@@ -19,16 +20,7 @@ public class Academia {
         this.clientes = new ArrayList<Cliente>();
         this.funcionarios = new ArrayList<Funcionario>();
         this.contas = new Contas();
-    }
-
-    public Academia(String nome) {
-        this.nome = nome;
-        this.contato = new Contato();
-        this.endereco = new Endereco();
-        this.clientes = new ArrayList<Cliente>();
-        this.funcionarios = new ArrayList<Funcionario>();
-        this.contas = new Contas();
-
+        this.equipamentos = new ArrayList<Equipamento>();
     }
 
     public Academia(String nome, Endereco endereco, Contato contato, List<Cliente> clientes, List<Funcionario> funcionarios) {
@@ -38,8 +30,30 @@ public class Academia {
         this.clientes = clientes;
         this.funcionarios = funcionarios;
         this.contas = new Contas();
+        this.equipamentos = new ArrayList<Equipamento>(); 
     }
 
+    Academia(String nome) {
+        this.nome = nome;
+        this.contato = new Contato();
+        this.endereco = new Endereco();
+        this.clientes = new ArrayList<Cliente>();
+        this.funcionarios = new ArrayList<Funcionario>();
+        this.contas = new Contas();
+        this.equipamentos = new ArrayList <Equipamento>();
+        
+    }
+
+    Academia(String nome, Endereco endereco, Contato contato) {
+        this.nome = nome;
+        this.contato = contato;
+        this.endereco = endereco;
+        this.clientes = new ArrayList<Cliente>();
+        this.funcionarios = new ArrayList<Funcionario>();
+        this.contas = new Contas();
+        this.equipamentos = new ArrayList <Equipamento>();
+        
+    }
     public String getNome() {
         return nome;
     }
@@ -92,7 +106,20 @@ public class Academia {
     public void setContas(Contas contas) {
         this.contas = contas;
     }
-
+    
+    public void cadastrarEquipamento(Equipamento e) {
+        this.equipamentos.add(e);
+    }
+    
+    public void removerEquipamento(int idEquipamentoRemover) {
+        for (int i = 0; i < this.equipamentos.size(); i++) {
+        	if(this.equipamentos.get(i).getID() == idEquipamentoRemover) {
+        		equipamentos.remove(i);
+        	}
+        
+        }
+    }
+    
     public void removerFuncionario(String CpfFuncionario) {
         for (Funcionario f : this.funcionarios) {
             if (f.getCpf().equals(CpfFuncionario)) {
@@ -157,4 +184,27 @@ public class Academia {
         }
         return null;
     }
+
+	public List<Equipamento> getEquipamentos() {
+		return equipamentos;
+	}
+	
+	
+
+	public void setEquipamentos(List<Equipamento> equipamentos) {
+		this.equipamentos = equipamentos;
+	}
+	
+	public String toString() {
+		return "\n Nome: "+ this.nome + 
+				"\n Logradouro: " + this.endereco.getLogradouro() +
+				"\n Número: " + this.endereco.getNumero() +
+				"\n Complemento: " + this.endereco.getComplemento()+
+				"\n Bairro: " + this.endereco.getBairro()+
+				"\n Cidade: " + this.endereco.getCidade()+
+				"\n Estado: " + this.endereco.getEstado()+
+				"\n Email: " + this.contato.getEmail()+
+				"\n Telefone: " + this.contato.getTelefone().getDd() + " " + this.contato.getTelefone().getNumero();
+ }
+    
 }

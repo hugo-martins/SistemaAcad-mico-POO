@@ -1,16 +1,28 @@
-import java.util.List;
 
 public class Contato {
 
-   private Telefone telefone;
     private String email;
-    
-    public Contato(){
-        
+    private Telefone telefone;
+
+    public Contato() {
+    	this.email = "";
+    	this.telefone = new Telefone();
     }
 
     public Contato(Telefone telefone, String email) {
+        this.email = email;
         this.telefone = telefone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public Telefone getTelefone() {
+        return telefone;
+    }
+
+    public void setEmail(String email) {
         this.email = email;
     }
 
@@ -18,15 +30,4 @@ public class Contato {
         this.telefone = telefone;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public Telefone getTelefone() {
-        return telefone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
 }

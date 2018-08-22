@@ -1,10 +1,30 @@
-﻿import javax.swing.JOptionPane;
+
+
+import javax.swing.JOptionPane;
 
 public class SisGym {
 
     public static void main(String[] args) {
-        Academia academia = new Academia("Physicus");
-
+        
+        
+        String nomeAcademia = JOptionPane.showInputDialog("Digite o nome da Academia");
+        /*int dddAcademia = Integer.parseInt(JOptionPane.showInputDialog("Digite o DDD da Academia"));
+        int foneAcademia = Integer.parseInt(JOptionPane.showInputDialog("Digite o Telefone da Academia"));
+        Telefone telefoneAcademia = new Telefone(dddAcademia, foneAcademia);
+        String emailAcademia = JOptionPane.showInputDialog("Digite o email da Academia");
+        Contato contatoAcademia = new Contato (telefoneAcademia, emailAcademia);
+        String logradouroAcademia = JOptionPane.showInputDialog("Digite o Logradouro da Academia");
+        int numeroAcademia = Integer.parseInt(JOptionPane.showInputDialog("Digite o Número da Academia"));
+        String complementoAcademia = JOptionPane.showInputDialog("Digite o Complemento");
+        String bairroAcademia = JOptionPane.showInputDialog("Digite o Bairro da Academia");
+        String cidadeAcademia = JOptionPane.showInputDialog("Digite a Cidade da Academia");
+        String estadoAcademia = JOptionPane.showInputDialog("Digite o Estado da Academia");
+        
+        Endereco enderecoAcademia = new Endereco (logradouroAcademia, numeroAcademia, complementoAcademia, bairroAcademia, cidadeAcademia, estadoAcademia);
+       */
+        Academia academia = new Academia(nomeAcademia); 
+    
+        
         boolean sair = false;
         while (!sair) {
             int escolha = Integer.parseInt(JOptionPane.showInputDialog("Menu Academia " + academia.getNome() + "\n"
@@ -22,16 +42,50 @@ public class SisGym {
                     while (!sairAcademia) {
 
                         int escolhaAcademia = Integer.parseInt(JOptionPane.showInputDialog("Menu Academia " + academia.getNome() + "\n"
-                                + "1 - Contas a receber\n"
-                                + "2 - Contas a pagar\n"
-                                + "0 - Sair"));
+                                + "1 - Dados\n"
+                                + "2 - Alterar Nome\n"
+                                + "3 - Alterar Telefone\n"
+                                + "4 - Alterar Endereço\n"
+                        		+ "5 - Contas a receber\n"
+                                + "6 - Contas a pagar\n"
+                                + "0 - Voltar"));
 
                         switch (escolhaAcademia) {
 
                             case 1:
-                                JOptionPane.showMessageDialog(null, "Você tem R$ " + academia.getContas().getaReceber() + " para receber até o fim do mês.");
+                                JOptionPane.showMessageDialog(null, academia.toString());
                                 break;
                             case 2:
+                                String novoNome = JOptionPane.showInputDialog("Digite o novo nome da Academia: ");
+                                academia.setNome(novoNome);
+                                JOptionPane.showMessageDialog(null,"O nome da Academia foi alterado para "+ academia.getNome());
+                                break;
+                            case 3:
+                            	String novoEmail = JOptionPane.showInputDialog("Digite o novo email da Academia");
+                            	int novoDDD = Integer.parseInt(JOptionPane.showInputDialog("Digite o novo DDD da Academia: "));
+                            	int novoNumero = Integer.parseInt(JOptionPane.showInputDialog("Digite o novo Telefone da Academia: "));
+                            	Telefone novoTelefone = new Telefone (novoNumero, novoDDD);
+                            	Contato novoContato = new Contato (novoTelefone, novoEmail);
+                            	academia.setContato(novoContato);
+                                JOptionPane.showMessageDialog(null,"O Telefone da Academia foi alterado para "+ academia.getContato().getTelefone().getDd() + " " + academia.getContato().getTelefone().getNumero());
+                                JOptionPane.showMessageDialog(null, "O Email da Academia foi alterado para "+ academia.getContato().getEmail());
+                                 break;
+                            case 4:
+                            	String novoLogradouroAcademia = JOptionPane.showInputDialog("Digite o Logradouro da Academia");
+                                int novoNumeroAcademia = Integer.parseInt(JOptionPane.showInputDialog("Digite o Número da Academia"));
+                                String novoComplementoAcademia = JOptionPane.showInputDialog("Digite o Complemento");
+                                String novoBairroAcademia = JOptionPane.showInputDialog("Digite o Bairro da Academia");
+                                String novaCidadeAcademia = JOptionPane.showInputDialog("Digite a Cidade da Academia");
+                                String novoEstadoAcademia = JOptionPane.showInputDialog("Digite o Estado da Academia");
+                                
+                                Endereco novoEdereco = new Endereco(novoLogradouroAcademia, novoNumeroAcademia, novoComplementoAcademia,novoBairroAcademia, novaCidadeAcademia, novoEstadoAcademia);
+                                academia.setEndereco(novoEdereco);
+                                
+                                break;
+                            case 5:
+                                JOptionPane.showMessageDialog(null, "Você tem R$ " + academia.getContas().getaReceber() + " para receber até o fim do mês.");
+                                break;
+                            case 6:
                                 JOptionPane.showMessageDialog(null, "Você tem R$ " + academia.getContas().getaPagar() + " para pagar até o fim do mês.");
                                 break;
                             case 0:
@@ -49,22 +103,23 @@ public class SisGym {
                                 + "2 - Listar\n"
                                 + "3 - A Pagar\n"
                                 + "4 - Efetuar Pagamento \n"
-                                + "0 - Sair"));
+                                + "0 - Voltar"));
 
                         switch (escolhaFuncionario) {
 
                             case 1:
-
-                                int id = Integer.parseInt(JOptionPane.showInputDialog("ID:"));
+                                int id = Integer.parseInt(JOptionPane.showInputDialog("ID: "));
                                 String nome = JOptionPane.showInputDialog("Nome: ");
                                 String CPF = JOptionPane.showInputDialog("CPF: ");
-                                //colocar o objeto contato
-                                //colocar o objeto endereco
-                                String data_nascimento = JOptionPane.showInputDialog("Data de nascimento: ");
+                                int ddd = Integer.parseInt(JOptionPane.showInputDialog("DDD: "));
+                                int numeroTel = Integer.parseInt(JOptionPane.showInputDialog("Número: "));
+                                String emailFun = JOptionPane.showInputDialog("Email: ");
+                                String dataNasciFunc = JOptionPane.showInputDialog("Data de Nascimento: ");
                                 double valor = Double.parseDouble(JOptionPane.showInputDialog("Valor: "));
                                 String cargaHoraria = JOptionPane.showInputDialog("Carga Horaria: ");
 
-                                Funcionario f = new Funcionario(id, nome, CPF, null, null, data_nascimento, valor, cargaHoraria);
+                                Telefone tel = new Telefone(numeroTel, ddd);
+                                Funcionario f = new Funcionario(id, nome, CPF,tel,emailFun,null,dataNasciFunc, valor, cargaHoraria);
                                 academia.cadastrarFuncionario(f);
 
                                 break;
@@ -73,7 +128,7 @@ public class SisGym {
 
                                 String lista = "Lista de Funcionários da Academia " + academia.getNome() + ":\n";
                                 for (Funcionario l : academia.getFuncionarios()) {
-                                    lista += l.getNome() + ", \n";
+                                    lista += l.toString() + ", \n";
                                 }
                                 JOptionPane.showMessageDialog(null, lista);
 
@@ -82,7 +137,7 @@ public class SisGym {
                                 String listaFuncionariosPagar = "Lista de Funcionários a pagar: \n";
                                 for (Funcionario fp : academia.getFuncionarios()) {
                                     if (!fp.isPagamento()) {
-                                        listaFuncionariosPagar += fp.getNome() + "\n";
+                                        listaFuncionariosPagar += fp.toString() + "\n";
                                     }
                                 }
                                 JOptionPane.showMessageDialog(null, listaFuncionariosPagar);
@@ -100,9 +155,61 @@ public class SisGym {
                         }
                     }
                     break;
-                //
+                /////
                 case 3:
+                	
+                	boolean sairEquipamento = false;
+                    while (!sairEquipamento) {
+                        int escolhaEquipamento = Integer.parseInt(JOptionPane.showInputDialog("Menu de Equipamentos da Academia " + academia.getNome() + "\n"
+                                + "1 - Cadastrar\n"
+                                + "2 - Remover\n"
+                                + "3 - Listar\n"
+                                + "0 - Voltar"));
+                	
+                        	switch (escolhaEquipamento) {
+                        	
+                        	case 1:
+                        		
+                        		int IdEquipamento = Integer.parseInt(JOptionPane.showInputDialog("Digite um ID para o Equipamento: "));
+                        		String nomeEquipamento = JOptionPane.showInputDialog("Digite o nome do Equipamento:");
+                        		String tipoEquipamento = JOptionPane.showInputDialog("Digite o tipo do Equipamento:");
+                        		double pesoMaterial = Double.parseDouble(JOptionPane.showInputDialog("Digite o peso do material:"));
+                        		String descricaoEquipamento = JOptionPane.showInputDialog("Digite a descrição do equipamento");
+                        		Equipamento e = new Equipamento(nomeEquipamento, tipoEquipamento, pesoMaterial, IdEquipamento, descricaoEquipamento);
+                        		academia.cadastrarEquipamento(e);
+                        	
+                        	break;
+                        		
+                        	case 2:
+                        		
+                        		int idEquipamentoRemover = Integer.parseInt(JOptionPane.showInputDialog("Digite o ID do Equipamento para remover"));
+                        		academia.removerEquipamento(idEquipamentoRemover);
+                        		System.out.println(idEquipamentoRemover);
+                        		
+                        	break;
+                        	
+                        	case 3:
+                        		
+                        		String listaEquipamentos = "Lista de Equipamentos da Academia "+ academia.getNome()+ "\n";
+                                for (Equipamento eq : academia.getEquipamentos()) {
+                                		listaEquipamentos += eq.toString() + "\n";
+                                    }
+                                JOptionPane.showMessageDialog(null, listaEquipamentos);
+                        		
+                        		
+                        	break;
+                        	
+                        	case 0:
+                        		
+                        		sairEquipamento = true;
+                        		
+                        		break;
+                        		
+                        		}
+                        	}
+   
                     break;
+                    
 
                 case 4: //cliente
                     boolean sairCliente = false;
@@ -112,20 +219,23 @@ public class SisGym {
                                 + "2 - Listar\n"
                                 + "3 - A Receber\n"
                                 + "4 - Efetuar Pagamento \n"
-                                + "0 - Sair"));
+                                + "0 - Voltar"));
 
                         switch (escolhaFuncionario) {
 
                             case 1:
 
                                 int id = Integer.parseInt(JOptionPane.showInputDialog("ID: "));
-                                String nome = JOptionPane.showInputDialog("Nome: ");
-                                String CPF = JOptionPane.showInputDialog("CPF: ");
-                                //colocar o objeto contato
-                                //colocar o objeto endereco
-                                String dataNascimento = JOptionPane.showInputDialog("Data de Nascimento: ");
-                                //Colocar o objeto plano
-                                Cliente c = new Cliente(id, nome, CPF, null, null, dataNascimento, null);
+                                String nomeCliente = JOptionPane.showInputDialog("Nome: ");
+                                String CPFCliente = JOptionPane.showInputDialog("CPF: ");
+                                int dddCliente = Integer.parseInt(JOptionPane.showInputDialog("DDD: "));
+                                int numeroTelCliente = Integer.parseInt(JOptionPane.showInputDialog("Número: "));
+                                String emailCliente = JOptionPane.showInputDialog("Email: ");
+                                String dataNasciCliente = JOptionPane.showInputDialog("Data de Nascimento: ");
+                                double valor = Double.parseDouble(JOptionPane.showInputDialog("Valor: "));
+                             
+                                Telefone telCliente = new Telefone(numeroTelCliente, dddCliente);
+                                Cliente c = new Cliente(id,nomeCliente,CPFCliente,telCliente,emailCliente,null, dataNasciCliente, null);
                                 academia.cadastrarCliente(c);
 
                                 break;

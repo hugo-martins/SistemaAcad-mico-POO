@@ -7,6 +7,10 @@ public class Telefone {
         this.numero = numero;
         this.dd = dd;
     }
+    public Telefone() {
+        this.numero = 0;
+        this.dd = 0;
+    }
 
     public int getNumero() {
         return numero;
