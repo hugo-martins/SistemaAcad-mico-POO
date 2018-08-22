@@ -29,5 +29,9 @@ public class Contato {
     public void setTelefone(Telefone telefone) {
         this.telefone = telefone;
     }
+    
+    public String toString(String email, Telefone telefone) {
+    	return "\nEmail: " + this.email + "\nTelefone: (" +telefone.getDd() +") "+ telefone.getNumero();
+    }
 
 }
