@@ -36,7 +36,7 @@ public class Funcionario extends Pessoa{
         return pagamento;
     }
 
-    public void setPagemento(boolean b){//muda va variavel pagamento
+    public void setPagamento(boolean b){//muda va variavel pagamento
         this.pagamento = b;
     }
 	
