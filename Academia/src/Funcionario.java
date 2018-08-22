@@ -35,7 +35,7 @@ public class Funcionario extends Pessoa {
     }
 
     public String toString() {//retorna os dados do Funcionario
-        return "\nID: " + this.getId() + "\nNome: " + super.getNome() + "\nCPF: " + super.getCpf() + "\nTelefone: " + super.getTelefone().getDd() + " " + super.getTelefone().getNumero() +"\nEmail: "+super.getEmail()+ "\nEndereco: " + super.getEndereco() + "\nSalario: " + this.salario + "\nCarga Horaria: " + this.cargaHoraria;
+        return "\nID: " + this.getId() + "\nNome: " + super.getNome() + "\nCPF: " + super.getCpf() + "\nTelefone: " + super.getContato().getTelefone().getDd() + " " + super.getContato().getTelefone().getNumero() +"\nEmail: "+super.getContato().getEmail()+ "\nEndereco: " + super.getEndereco() + "\nSalario: " + this.salario + "\nCarga Horaria: " + this.cargaHoraria;
     }
 
     public boolean isPagamento(){//retorna o pagamento
