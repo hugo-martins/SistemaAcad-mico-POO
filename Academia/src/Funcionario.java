@@ -7,6 +7,7 @@ public class Funcionario extends Pessoa {
 
     private double salario;//Salario do Funcionario
     private String cargaHoraria;//Carga Horaria do funcionario
+    private boolean pagamento;
 
     public Funcionario() {
     }//Construtor vazio
