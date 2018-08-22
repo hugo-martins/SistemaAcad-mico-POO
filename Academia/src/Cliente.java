@@ -23,11 +23,11 @@ public class Cliente extends Pessoa {
         return this.plano;
     }
 
-    public boolean isPagamentos(){//retorna o pagamento
+    public boolean isPagamento(){//retorna o pagamento
         return pagamento;
     }
 
-    public void setPagementos(boolean b){//muda o pagamento
+    public void setPagemento(boolean b){//muda o pagamento
         this.pagamento = b;
     }
 

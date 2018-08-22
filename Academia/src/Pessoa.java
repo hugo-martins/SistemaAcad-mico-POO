@@ -1,8 +1,4 @@
-﻿
-/**
- *
- * @author Will
- */
+
 public abstract class Pessoa {
 
     private int id;//id da pessoa
