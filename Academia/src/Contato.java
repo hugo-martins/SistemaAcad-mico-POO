@@ -2,12 +2,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Contato {
-
+    private Telefone telefone;
     private List<Pessoa> cadastroContato;
+
+    public Contato(Telefone telefone, List<Pessoa> cadastroContato) {
+        this.telefone = telefone;
+        this.cadastroContato = cadastroContato;
+    }
 
     public Contato() {
         this.cadastroContato = new ArrayList<Pessoa>();
     }
+    
 
     public void addContato(Pessoa pessoa) throws contatoJaExisteException {
 

@@ -1,11 +1,10 @@
-
-
 import javax.swing.JOptionPane;
 
 public class SisGym {
 
+    static int id_;
     public static void main(String[] args) {
-        Academia academia = new Academia("Physicus");
+        Academia academia = new Academia();
 
         boolean sair = false;
         while (!sair) {
@@ -56,21 +55,47 @@ public class SisGym {
                         switch (escolhaFuncionario) {
 
                             case 1:
-                                int id = Integer.parseInt(JOptionPane.showInputDialog("ID: "));
+                                //Tratamento de erro do ID. Mesmo se o usuário digitar uma String ele converto em int.
+                                boolean teste = false;
+                                boolean validacao=true;
+                                
+                                while(validacao){
+                                String id = JOptionPane.showInputDialog("ID: ");
+                                if(id.equals("")){
+                                    System.err.println("Valor Nulo!");
+                                    teste= false;
+                                }else if(id.length() >= 999){
+                                    /*
+                                    Regra de 1 a 999 nunca maior que 4 caracteres
+                                    */
+                                    System.err.println("Isto é um ID?");
+                                    teste=false;
+                                }else{
+                                
+                                     int id_ = Integer.parseInt(id);
+                                     System.out.print("Id;"+ id_);
+                                    teste=true;
+                                }
+                                if(teste){
                                 String nome = JOptionPane.showInputDialog("Nome: ");
                                 String CPF = JOptionPane.showInputDialog("CPF: ");
                                 int ddd = Integer.parseInt(JOptionPane.showInputDialog("DDD: "));
                                 int numeroTel = Integer.parseInt(JOptionPane.showInputDialog("Número: "));
                                 String emailFun = JOptionPane.showInputDialog("Email: ");
                                 String dataNasciFunc = JOptionPane.showInputDialog("Data de Nascimento: ");
-                                double valor = Double.parseDouble(JOptionPane.showInputDialog("Valor: "));
+                                double salario = Double.parseDouble(JOptionPane.showInputDialog("Valor: "));
                                 String cargaHoraria = JOptionPane.showInputDialog("Carga Horaria: ");
-
-                                Telefone tel = new Telefone(numeroTel, ddd);
-                                Funcionario f = new Funcionario(id, nome, CPF,tel,emailFun,null,dataNasciFunc, valor, cargaHoraria);
+                                
+                                
+                                Telefone telFuncionario = new Telefone(numeroTel, ddd);
+                                Funcionario f = new Funcionario(id_, nome, CPF,telFuncionario,emailFun,null,dataNasciFunc, salario, cargaHoraria);
                                 academia.cadastrarFuncionario(f);
-
+                                validacao=false;
                                 break;
+                                }
+                                }
+                                
+                              
 
                             case 2:
 
@@ -121,7 +146,28 @@ public class SisGym {
 
                             case 1:
 
-                                int id = Integer.parseInt(JOptionPane.showInputDialog("ID: "));
+                                //Tratamento de erro do ID. Mesmo se o usuário digitar uma String ele converto em int.
+                                boolean teste = false;
+                                boolean validacao=true;
+                                
+                                while(validacao){
+                                String id = JOptionPane.showInputDialog("ID: ");
+                                if(id.equals("")){
+                                    System.err.println("Valor Nulo!");
+                                    teste= false;
+                                }else if(id.length() >= 999){
+                                    /*
+                                    Regra de 1 a 999 nunca maior que 4 caracteres
+                                    */
+                                    System.err.println("Isto é um ID?");
+                                    teste=false;
+                                }else{
+                                
+                                     int id_ = Integer.parseInt(id);
+                                     System.out.print("Id;"+ id_);
+                                    teste=true;
+                                }
+                                if(teste){
                                 String nomeCliente = JOptionPane.showInputDialog("Nome: ");
                                 String CPFCliente = JOptionPane.showInputDialog("CPF: ");
                                 int dddCliente = Integer.parseInt(JOptionPane.showInputDialog("DDD: "));
@@ -131,9 +177,10 @@ public class SisGym {
                                 double valor = Double.parseDouble(JOptionPane.showInputDialog("Valor: "));
                              
                                 Telefone telCliente = new Telefone(numeroTelCliente, dddCliente);
-                                Cliente c = new Cliente(id,nomeCliente,CPFCliente,telCliente,emailCliente,null, dataNasciCliente, null);
+                                Cliente c = new Cliente(id_,nomeCliente,CPFCliente,telCliente,emailCliente,null, dataNasciCliente, null);
                                 academia.cadastrarCliente(c);
-
+                                }
+                                }
                                 break;
 
                             case 2:

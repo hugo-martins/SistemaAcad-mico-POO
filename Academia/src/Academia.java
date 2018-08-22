@@ -30,10 +30,6 @@ public class Academia {
         this.contas = new Contas();
     }
 
-    Academia(String nome) {
-        this.nome = nome;
-    }
-
     public String getNome() {
         return nome;
     }
