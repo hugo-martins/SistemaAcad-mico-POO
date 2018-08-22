@@ -1,4 +1,3 @@
-
 public class contatoNaoExisteException extends Exception {
     public contatoNaoExisteException(){
         super();

@@ -1,7 +1,12 @@
-
 public class Telefone {
+
     private int numero;
     private int dd;
+
+    public Telefone(int numero, int dd) {
+        this.numero = numero;
+        this.dd = dd;
+    }
 
     public int getNumero() {
         return numero;
@@ -18,5 +23,5 @@ public class Telefone {
     public void setDd(int dd) {
         this.dd = dd;
     }
-    
+
 }

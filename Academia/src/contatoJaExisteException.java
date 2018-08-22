@@ -1,5 +1,4 @@
 
-
 public class contatoJaExisteException extends Exception {
     public contatoJaExisteException(){
         super();
@@ -7,5 +6,4 @@ public class contatoJaExisteException extends Exception {
     public contatoJaExisteException(String msgErro){
         super(msgErro);
     }
-    
 }
