@@ -1,4 +1,3 @@
-package projetct.academia;
 
 public class contatoJaExisteException extends Exception {
     public contatoJaExisteException(){
@@ -7,5 +6,4 @@ public class contatoJaExisteException extends Exception {
     public contatoJaExisteException(String msgErro){
         super(msgErro);
     }
-    
 }

@@ -1,5 +1,3 @@
-package projetct.academia;
-
 public class Plano {
 
 	private int plano;
