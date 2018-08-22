@@ -69,6 +69,6 @@ public class Endereco {
     }
 
     public String toString() {
-        return "Logradouro: " + this.logradouro + " n�: " + this.numero + "Bairro: " + this.bairro + "Cidade: " + this.cidade + "Estado: " + this.estado + "Complemento: " + this.complemento;
+        return "Logradouro: " + this.logradouro + " nº: " + this.numero + "Bairro: " + this.bairro + "Cidade: " + this.cidade + "Estado: " + this.estado + "Complemento: " + this.complemento;
     }
 }
