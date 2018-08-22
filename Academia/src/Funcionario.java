@@ -7,6 +7,7 @@ public class Funcionario extends Pessoa {
 
     private double salario;//Salario do Funcionario
     private String cargaHoraria;//Carga Horaria do funcionario
+    private boolean pagamento;
 
     public Funcionario() {
     }//Construtor vazio
@@ -34,14 +35,14 @@ public class Funcionario extends Pessoa {
     }
 
     public String toString() {//retorna os dados do Funcionario
-        return "\nID: " + this.getId() + "\nNome: " + super.getNome() + "\nCPF: " + super.getCpf() + "\nTelefone: \" + super.getTelefone()+\"\\nEmail: \"+super.getEmail()+ \"\nEndereco: " + super.getEndereco() + "\nSalario: " + this.salario + "\nCarga Horaria: " + this.cargaHoraria;
+        return "\nID: " + this.getId() + "\nNome: " + super.getNome() + "\nCPF: " + super.getCpf() + "\nTelefone: "+ super.getTelefone()+"\nEmail: "+super.getEmail()+ "\nEndereco: " + super.getEndereco() + "\nSalario: " + this.salario + "\nCarga Horaria: " + this.cargaHoraria;
     }
 
     boolean isPagamento() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       return pagamento;
     }
 
     void setPagamento(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.pagamento = b;
     }
 }//fim da classe Funcionario

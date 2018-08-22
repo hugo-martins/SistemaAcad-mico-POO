@@ -12,8 +12,6 @@ public class Contas {
 		this.aReceber = aReceber;
 		this.aPagar = aPagar;
 	}
-
-	
 	
 	public double getaReceber() {
 		return aReceber;
