@@ -8,20 +8,6 @@ public class SisGym {
         
         
         String nomeAcademia = JOptionPane.showInputDialog("Digite o nome da Academia");
-        /*int dddAcademia = Integer.parseInt(JOptionPane.showInputDialog("Digite o DDD da Academia"));
-        int foneAcademia = Integer.parseInt(JOptionPane.showInputDialog("Digite o Telefone da Academia"));
-        Telefone telefoneAcademia = new Telefone(dddAcademia, foneAcademia);
-        String emailAcademia = JOptionPane.showInputDialog("Digite o email da Academia");
-        Contato contatoAcademia = new Contato (telefoneAcademia, emailAcademia);
-        String logradouroAcademia = JOptionPane.showInputDialog("Digite o Logradouro da Academia");
-        int numeroAcademia = Integer.parseInt(JOptionPane.showInputDialog("Digite o Número da Academia"));
-        String complementoAcademia = JOptionPane.showInputDialog("Digite o Complemento");
-        String bairroAcademia = JOptionPane.showInputDialog("Digite o Bairro da Academia");
-        String cidadeAcademia = JOptionPane.showInputDialog("Digite a Cidade da Academia");
-        String estadoAcademia = JOptionPane.showInputDialog("Digite o Estado da Academia");
-        
-        Endereco enderecoAcademia = new Endereco (logradouroAcademia, numeroAcademia, complementoAcademia, bairroAcademia, cidadeAcademia, estadoAcademia);
-       */
         Academia academia = new Academia(nomeAcademia); 
     
         
@@ -98,7 +84,7 @@ public class SisGym {
 
                     boolean sairFuncionario = false;
                     while (!sairFuncionario) {
-                        int escolhaFuncionario = Integer.parseInt(JOptionPane.showInputDialog("Menu Funcionarios " + academia.getNome() + "\n"
+                        int escolhaFuncionario = Integer.parseInt(JOptionPane.showInputDialog("Menu Funcionários " + academia.getNome() + "\n"
                                 + "1 - Cadastrar\n"
                                 + "2 - Listar\n"
                                 + "3 - A Pagar\n"
@@ -116,7 +102,7 @@ public class SisGym {
                                 String emailFun = JOptionPane.showInputDialog("Email: ");
                                 String dataNasciFunc = JOptionPane.showInputDialog("Data de Nascimento: ");
                                 double valor = Double.parseDouble(JOptionPane.showInputDialog("Valor: "));
-                                String cargaHoraria = JOptionPane.showInputDialog("Carga Horaria: ");
+                                String cargaHoraria = JOptionPane.showInputDialog("Carga Horária: ");
 
                                 Telefone tel = new Telefone(numeroTel, ddd);
                                 Contato contato = new Contato(tel,emailFun);
@@ -230,7 +216,7 @@ public class SisGym {
                                 String nomeCliente = JOptionPane.showInputDialog("Nome: ");
                                 String CPFCliente = JOptionPane.showInputDialog("CPF: ");
                                 int dddCliente = Integer.parseInt(JOptionPane.showInputDialog("DDD: "));
-                                int numeroTelCliente = Integer.parseInt(JOptionPane.showInputDialog("Número: "));
+                                int numeroTelCliente = Integer.parseInt(JOptionPane.showInputDialog("NÃºmero: "));
                                 String emailCliente = JOptionPane.showInputDialog("Email: ");
                                 String dataNasciCliente = JOptionPane.showInputDialog("Data de Nascimento: ");
                                 int opcaoPlano = Integer.parseInt(JOptionPane.showInputDialog("Opções de Plano:"
