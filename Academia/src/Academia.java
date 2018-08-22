@@ -131,7 +131,7 @@ public class Academia {
     public void setReceberCliente(List<Cliente> clientes) {
         for (Cliente c : clientes) {
             if (!c.isPagamento()) {
-                this.contas.setaReceber(c.getValor());
+                this.contas.setaReceber(c.getPlano().getValorPlano());
             }
         }
     }
@@ -159,7 +159,7 @@ public class Academia {
 
     public void cadastrarCliente(Cliente c) {
         this.clientes.add(c);
-        this.contas.setaReceber(c.getValor());
+        this.contas.setaReceber(c.getPlano().getValorPlano());
     }
 
     public String clientePagar(String CPF) {
@@ -169,7 +169,7 @@ public class Academia {
                     c.setPagamento(true);
                 }
             }
-            this.contas.setNegativoReceber(c.getValor());
+            this.contas.setNegativoReceber(c.getPlano().getValorPlano());
             return "Mensalidade paga com sucesso!";
         }
         return "Mensalidade ja foi paga esse mês";
