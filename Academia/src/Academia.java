@@ -12,15 +12,6 @@ public class Academia {
     private Contas contas;
     private List<Cliente> clientesDevendo = new ArrayList<>();
 
-    public Academia() {
-        this.nome = " ";
-        this.contato = new Contato();
-        this.endereco = new Endereco();
-        this.clientes = new ArrayList<Cliente>();
-        this.funcionarios = new ArrayList<Funcionario>();
-        this.contas = new Contas();
-    }
-
     public Academia(String nome, Endereco endereco, Contato contato, List<Cliente> clientes, List<Funcionario> funcionarios) {
         this.nome = nome;
         this.contato = contato;
@@ -30,8 +21,13 @@ public class Academia {
         this.contas = new Contas();
     }
 
-    Academia(String nome) {
+    Academia() {
         this.nome = nome;
+        this.contato = new Contato();
+        this.endereco = new Endereco();
+        this.clientes = new ArrayList<Cliente>();
+        this.funcionarios = new ArrayList<Funcionario>();
+        this.contas = new Contas();
     }
 
     public String getNome() {

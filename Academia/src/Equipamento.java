@@ -1,5 +1,3 @@
-package projetct.academia;
-
 public class Equipamento {
 	private String nome;
 	private String tipoEquipamento;
