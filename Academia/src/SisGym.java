@@ -44,7 +44,7 @@ public class SisGym {
                         int escolhaAcademia = Integer.parseInt(JOptionPane.showInputDialog("Menu Academia " + academia.getNome() + "\n"
                                 + "1 - Dados\n"
                                 + "2 - Alterar Nome\n"
-                                + "3 - Alterar Telefone\n"
+                                + "3 - Alterar Contato\n"
                                 + "4 - Alterar Endereço\n"
                         		+ "5 - Contas a receber\n"
                                 + "6 - Contas a pagar\n"
@@ -224,7 +224,7 @@ public class SisGym {
                         switch (escolhaFuncionario) {
 
                             case 1:
-
+                                Plano planoCliente = new Plano();
                                 int id = Integer.parseInt(JOptionPane.showInputDialog("ID: "));
                                 String nomeCliente = JOptionPane.showInputDialog("Nome: ");
                                 String CPFCliente = JOptionPane.showInputDialog("CPF: ");
@@ -232,10 +232,16 @@ public class SisGym {
                                 int numeroTelCliente = Integer.parseInt(JOptionPane.showInputDialog("Número: "));
                                 String emailCliente = JOptionPane.showInputDialog("Email: ");
                                 String dataNasciCliente = JOptionPane.showInputDialog("Data de Nascimento: ");
-                                double valor = Double.parseDouble(JOptionPane.showInputDialog("Valor: "));
-                             
+                                int opcaoPlano = Integer.parseInt(JOptionPane.showInputDialog("Opções de Plano:"
+                                		+ "\n1-Plano Família"
+                                		+ "\n2-Plano Universitário"
+                                		+ "\n3-Plano Padrão"
+                                		+ "\n4-Plano Natação"
+                                		+ "\n5-Plano Luta"));
+                                planoCliente.setPlano(opcaoPlano);
+                                double valor = planoCliente.setValorPlano((int) planoCliente.getPlano());
                                 Telefone telCliente = new Telefone(numeroTelCliente, dddCliente);
-                                Cliente c = new Cliente(id,nomeCliente,CPFCliente,telCliente,emailCliente,null, dataNasciCliente, null);
+                                Cliente c = new Cliente(id,nomeCliente, CPFCliente, telCliente, emailCliente, null, dataNasciCliente, planoCliente);
                                 academia.cadastrarCliente(c);
 
                                 break;
@@ -244,7 +250,7 @@ public class SisGym {
 
                                 String lista = "Lista de Clientes da Academia " + academia.getNome() + ":\n";
                                 for (Cliente l : academia.getClientes()) {
-                                    lista += l.getNome() + ", \n";
+                                    lista += l.toString()+ ", \n";
                                 }
                                 JOptionPane.showMessageDialog(null, lista);
 
