@@ -5,6 +5,7 @@
 public class Funcionario extends Pessoa{
 	private double salario;//Salario do Funcionario
 	private String cargaHoraria;//Carga Horaria do funcionario
+	private boolean pagamento;//variavel que verifica se tem um pagamento pendente
 	
 	public Funcionario(){}//Construtor vazio
 	
@@ -29,6 +30,14 @@ public class Funcionario extends Pessoa{
 	public String getCargaHoraria() {//retorna a carga horaria do funcionario
 		return this.cargaHoraria;
 	}
+
+	public boolean isPagamentos(){//retorna o pagamento
+        return pagamento;
+    }
+
+    public void setPagementos(boolean b){//muda va variavel pagamento
+        this.pagamento = b;
+    }
 	
 	public String toString() {//retorna os dados do Funcionario
 		return "\nID: "+this.getId()+"\nNome: "+super.getNome()+"\nCPF: "+super.getCpf()+"\nContato: "+super.getContato()+"\nEndereco: "+super.getEndereco()+"\nSalario: "+this.salario+"\nCarga Horaria: "+this.cargaHoraria;

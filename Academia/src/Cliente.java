@@ -4,8 +4,8 @@
  * @author Will
  */
 public class Cliente extends Pessoa {
-
     private Plano plano;//Plano que o cliente ira contratar
+    private boolean pagamento;
 
     public Cliente() {
     }
@@ -21,6 +21,14 @@ public class Cliente extends Pessoa {
 
     public Plano getPlano() {//retorna o plano contratado pelo cliente
         return this.plano;
+    }
+
+    public boolean isPagamentos(){//retorna o pagamento
+        return pagamento;
+    }
+
+    public void setPagementos(boolean b){//muda o pagamento
+        this.pagamento = b;
     }
 
     public String toString() {//retorna os dados do cliente

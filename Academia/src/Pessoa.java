@@ -65,4 +65,11 @@ public abstract class Pessoa {
         return this.endereco;
     }
 
+    public void setDataNascimento(String dataNascimento){
+        this.data_nascimento = dataNascimento;
+    }
+
+    public String getDataNascimento(){
+        return this.data_nascimento;
+    }
 }//fim da classe Pessoa
