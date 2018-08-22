@@ -1,8 +1,10 @@
 public class contatoNaoExisteException extends Exception {
-    public contatoNaoExisteException(){
+
+    public contatoNaoExisteException() {
         super();
     }
-    public contatoNaoExisteException(String msgErro){
+
+    public contatoNaoExisteException(String msgErro) {
         super(msgErro);
     }
 }
