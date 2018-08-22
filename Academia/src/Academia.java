@@ -162,17 +162,23 @@ public class Academia {
         this.contas.setaReceber(c.getPlano().getValorPlano());
     }
 
-    public String clientePagar(String CPF) {
+   public String clientePagar(String CPF) throws cpfNaoExisteException {
+        boolean existe = false;
         for (Cliente c : this.clientes) {
             if (c.getCpf().equals(CPF)) {
                 if (!c.isPagamento()) {
                     c.setPagamento(true);
+                    this.contas.setNegativoReceber(c.getPlano().getValorPlano());
+                    existe = true;
                 }
             }
-            this.contas.setNegativoReceber(c.getPlano().getValorPlano());
-            return "Mensalidade paga com sucesso!";
         }
-        return "Mensalidade ja foi paga esse mês";
+        if (existe != false) {
+            return "Mensalidade paga com sucesso!";
+        } else {
+            throw new cpfNaoExisteException("O CPF não está cadastrado.\n");
+        }
+
     }
 
     public List<Cliente> getclientesDevendo() {
