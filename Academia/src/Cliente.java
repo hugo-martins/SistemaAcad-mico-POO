@@ -35,3 +35,4 @@ public class Cliente extends Pessoa {
         return "\nID: " + super.getId() + "\nNome: " + super.getNome() + "\nCPF: " + super.getCpf() + "\nContato: " + super.getContato().toString() + "\nEndereco: " + super.getEndereco() + "\nPlano contratado: " + this.plano.nomePlano(plano.getPlano()) + "\nValor do plano: " + plano.getValorPlano();
     }
 }
+
