@@ -32,11 +32,11 @@ public class Funcionario extends Pessoa{
 		return this.cargaHoraria;
 	}
 
-	public boolean isPagamentos(){//retorna o pagamento
+	public boolean isPagamento(){//retorna o pagamento
         return pagamento;
     }
 
-    public void setPagementos(boolean b){//muda va variavel pagamento
+    public void setPagemento(boolean b){//muda va variavel pagamento
         this.pagamento = b;
     }
 	
