@@ -32,6 +32,6 @@ public class Cliente extends Pessoa {
     }
 
     public String toString() {//retorna os dados do cliente
-        return "\nID: " + super.getId() + "\nNome: " + super.getNome() + "\nCPF: " + super.getCpf() + "\nTelefone: " + super.getContato().getTelefone().getDd() + " " + super.getContato().getTelefone().getNumero() +"\nEmail: "+super.getContato().getEmail()+ "\nEndereco: " + super.getEndereco() + "Plano contratado: " + this.plano;
+        return "\nID: " + super.getId() + "\nNome: " + super.getNome() + "\nCPF: " + super.getCpf() + "\nContato: " + super.getContato().toString() + "\nEndereco: " + super.getEndereco() + "\nPlano contratado: " + this.plano.nomePlano(plano.getPlano()) + "\nValor do plano: " + plano.getValorPlano();
     }
 }
