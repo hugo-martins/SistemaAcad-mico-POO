@@ -37,11 +37,11 @@ public class Funcionario extends Pessoa {
         return "\nID: " + this.getId() + "\nNome: " + super.getNome() + "\nCPF: " + super.getCpf() + "\nTelefone: " + super.getTelefone().getDd() + " " + super.getTelefone().getNumero() +"\nEmail: "+super.getEmail()+ "\nEndereco: " + super.getEndereco() + "\nSalario: " + this.salario + "\nCarga Horaria: " + this.cargaHoraria;
     }
 
-    boolean isPagamento() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean isPagamento(){//retorna o pagamento
+        return pagamento;
     }
 
-    void setPagamento(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setPagamento(boolean b){//muda o pagamento
+        this.pagamento = b;
     }
 }//fim da classe Funcionario
