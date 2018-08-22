@@ -103,10 +103,18 @@ public class SisGym {
                                 String dataNasciFunc = JOptionPane.showInputDialog("Data de Nascimento: ");
                                 double valor = Double.parseDouble(JOptionPane.showInputDialog("Valor: "));
                                 String cargaHoraria = JOptionPane.showInputDialog("Carga Horária: ");
+                                
+                                String estadoFunc = JOptionPane.showInputDialog("Estado do funcionário: ");
+                                String cidadeFunc = JOptionPane.showInputDialog("Cidade: ");
+                                String logradouroFunc = JOptionPane.showInputDialog("Logradouro: ");
+                                int numeroFunc = Integer.parseInt(JOptionPane.showInputDialog("Número da casa: "));
+                                String complementoFunc = JOptionPane.showInputDialog("Complemento: ");
+                                String bairroFunc = JOptionPane.showInputDialog("Bairro: ");
 
                                 Telefone tel = new Telefone(numeroTel, ddd);
                                 Contato contato = new Contato(tel,emailFun);
-                                Funcionario f = new Funcionario(id, nome, CPF,contato,null,dataNasciFunc, valor, cargaHoraria);
+                                Endereco enderecoFunc = new Endereco(logradouroFunc, numeroFunc, complementoFunc, bairroFunc, cidadeFunc, estadoFunc);
+                                Funcionario f = new Funcionario(id, nome, CPF,contato,enderecoFunc,dataNasciFunc, valor, cargaHoraria);
                                 academia.cadastrarFuncionario(f);
 
                                 break;
@@ -219,6 +227,14 @@ public class SisGym {
                                 int numeroTelCliente = Integer.parseInt(JOptionPane.showInputDialog("NÃºmero: "));
                                 String emailCliente = JOptionPane.showInputDialog("Email: ");
                                 String dataNasciCliente = JOptionPane.showInputDialog("Data de Nascimento: ");
+                                
+                                String estadoCliente = JOptionPane.showInputDialog("Estado do cliente: ");
+                                String cidadeCliente = JOptionPane.showInputDialog("Cidade: ");
+                                String logradouroCliente = JOptionPane.showInputDialog("Logradouro: ");
+                                int numeroCliente = Integer.parseInt(JOptionPane.showInputDialog("Número da casa: "));
+                                String complementoCliente = JOptionPane.showInputDialog("Complemento: ");
+                                String bairroCliente = JOptionPane.showInputDialog("Bairro: ");
+                                
                                 int opcaoPlano = Integer.parseInt(JOptionPane.showInputDialog("Opções de Plano:"
                                 		+ "\n1-Plano Família"
                                 		+ "\n2-Plano Universitário"
@@ -229,9 +245,9 @@ public class SisGym {
                                 double valor = planoCliente.setValorPlano((int) planoCliente.getPlano());
                                 Telefone telCliente = new Telefone(numeroTelCliente, dddCliente);
                                 Contato contatoCliente = new Contato(telCliente,emailCliente);
-                                Cliente c = new Cliente(id,nomeCliente, CPFCliente, contatoCliente, null, dataNasciCliente, planoCliente);
+                                Endereco enderecoCliente = new Endereco(logradouroCliente, numeroCliente, complementoCliente, bairroCliente, cidadeCliente, estadoCliente);
+                                Cliente c = new Cliente(id,nomeCliente, CPFCliente, contatoCliente, enderecoCliente, dataNasciCliente, planoCliente);
                                 academia.cadastrarCliente(c);
-
                                 break;
 
                             case 2:
