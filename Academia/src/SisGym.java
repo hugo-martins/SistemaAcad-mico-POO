@@ -119,7 +119,8 @@ public class SisGym {
                                 String cargaHoraria = JOptionPane.showInputDialog("Carga Horaria: ");
 
                                 Telefone tel = new Telefone(numeroTel, ddd);
-                                Funcionario f = new Funcionario(id, nome, CPF,tel,emailFun,null,dataNasciFunc, valor, cargaHoraria);
+                                Contato contato = new Contato(tel,emailFun);
+                                Funcionario f = new Funcionario(id, nome, CPF,contato,null,dataNasciFunc, valor, cargaHoraria);
                                 academia.cadastrarFuncionario(f);
 
                                 break;
@@ -241,7 +242,8 @@ public class SisGym {
                                 planoCliente.setPlano(opcaoPlano);
                                 double valor = planoCliente.setValorPlano((int) planoCliente.getPlano());
                                 Telefone telCliente = new Telefone(numeroTelCliente, dddCliente);
-                                Cliente c = new Cliente(id,nomeCliente, CPFCliente, telCliente, emailCliente, null, dataNasciCliente, planoCliente);
+                                Contato contatoCliente = new Contato(telCliente,emailCliente);
+                                Cliente c = new Cliente(id,nomeCliente, CPFCliente, contatoCliente, null, dataNasciCliente, planoCliente);
                                 academia.cadastrarCliente(c);
 
                                 break;
