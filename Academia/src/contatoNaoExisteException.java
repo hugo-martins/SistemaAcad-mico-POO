@@ -1,6 +1,11 @@
 public class contatoNaoExisteException extends Exception {
 
-    public contatoNaoExisteException() {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public contatoNaoExisteException() {
         super();
     }
 

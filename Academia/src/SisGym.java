@@ -209,14 +209,16 @@ public class SisGym {
                 case 4: //cliente
                     boolean sairCliente = false;
                     while (!sairCliente) {
-                        int escolhaFuncionario = Integer.parseInt(JOptionPane.showInputDialog("Menu Clientes " + academia.getNome() + "\n"
+                        int escolhaCliente = Integer.parseInt(JOptionPane.showInputDialog("Menu Clientes " + academia.getNome() + "\n"
                                 + "1 - Cadastrar\n"
                                 + "2 - Listar\n"
                                 + "3 - A Receber\n"
                                 + "4 - Efetuar Pagamento \n"
                                 + "0 - Voltar"));
 
-                        switch (escolhaFuncionario) {
+                        switch (escolhaCliente
+                        		
+                        		) {
 
                             case 1:
                                 Plano planoCliente = new Plano();
@@ -242,7 +244,7 @@ public class SisGym {
                                 		+ "\n4-Plano Natação"
                                 		+ "\n5-Plano Luta"));
                                 planoCliente.setPlano(opcaoPlano);
-                                double valor = planoCliente.setValorPlano((int) planoCliente.getPlano());
+                                //double valor = planoCliente.setValorPlano((int) planoCliente.getPlano());
                                 Telefone telCliente = new Telefone(numeroTelCliente, dddCliente);
                                 Contato contatoCliente = new Contato(telCliente,emailCliente);
                                 Endereco enderecoCliente = new Endereco(logradouroCliente, numeroCliente, complementoCliente, bairroCliente, cidadeCliente, estadoCliente);
@@ -275,7 +277,6 @@ public class SisGym {
                                     JOptionPane.showMessageDialog(null, academia.clientePagar(cpfClientePagar));
                                 } catch (cpfNaoExisteException e) {
                                     JOptionPane.showMessageDialog(null, e.getMessage());
-                                    String cpfClientePagar = JOptionPane.showInputDialog("CPF: ");
                                 }
                                 break;
 

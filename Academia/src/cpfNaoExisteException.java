@@ -1,6 +1,11 @@
 
 public class cpfNaoExisteException extends Exception {
-     public cpfNaoExisteException() {
+     /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public cpfNaoExisteException() {
         super();
     }
 

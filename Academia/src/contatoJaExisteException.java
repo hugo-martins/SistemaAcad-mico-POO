@@ -1,6 +1,11 @@
 public class contatoJaExisteException extends Exception {
 
-    public contatoJaExisteException() {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public contatoJaExisteException() {
         super();
     }
 
