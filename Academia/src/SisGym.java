@@ -224,7 +224,7 @@ public class SisGym {
                                 String nomeCliente = JOptionPane.showInputDialog("Nome: ");
                                 String CPFCliente = JOptionPane.showInputDialog("CPF: ");
                                 int dddCliente = Integer.parseInt(JOptionPane.showInputDialog("DDD: "));
-                                int numeroTelCliente = Integer.parseInt(JOptionPane.showInputDialog("NÃºmero: "));
+                                int numeroTelCliente = Integer.parseInt(JOptionPane.showInputDialog("Número: "));
                                 String emailCliente = JOptionPane.showInputDialog("Email: ");
                                 String dataNasciCliente = JOptionPane.showInputDialog("Data de Nascimento: ");
                                 
