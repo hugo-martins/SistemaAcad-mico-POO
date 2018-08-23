@@ -7,13 +7,13 @@ public class SisGym {
     public static void main(String[] args) {
         
         
-        String nomeAcademia = JOptionPane.showInputDialog("Digite o nome da Academia");
+        String nomeAcademia = JOptionPane.showInputDialog("Digite o nome da Academia"); //Inicia pedindo o nome da Academia
         Academia academia = new Academia(nomeAcademia); 
     
         
-        boolean sair = false;
-        while (!sair) {
-            int escolha = Integer.parseInt(JOptionPane.showInputDialog("Menu Academia " + academia.getNome() + "\n"
+        boolean sair = false; //condição para o menu geral funcionar
+        while (!sair) { 
+            int escolha = Integer.parseInt(JOptionPane.showInputDialog("Menu Academia " + academia.getNome() + "\n" //Menu Geral
                     + "1 - Academia\n"
                     + "2 - Funcionários\n"
                     + "3 - Equipamentos\n"
@@ -22,9 +22,9 @@ public class SisGym {
 
             switch (escolha) {
 
-                case 1:
+                case 1: //Entrando no Menu da Academia
 
-                    boolean sairAcademia = false;
+                    boolean sairAcademia = false; //Condição para sair do menu da academia
                     while (!sairAcademia) {
 
                         int escolhaAcademia = Integer.parseInt(JOptionPane.showInputDialog("Menu Academia " + academia.getNome() + "\n"
@@ -39,14 +39,20 @@ public class SisGym {
                         switch (escolhaAcademia) {
 
                             case 1:
+                            	
                                 JOptionPane.showMessageDialog(null, academia.toString());
+                                
                                 break;
+                           
                             case 2:
-                                String novoNome = JOptionPane.showInputDialog("Digite o novo nome da Academia: ");
-                                academia.setNome(novoNome);
+                            
+                            	String novoNome = JOptionPane.showInputDialog("Digite o novo nome da Academia: ");
+                                academia.setNome(novoNome); //Altera o nome da Academia
                                 JOptionPane.showMessageDialog(null,"O nome da Academia foi alterado para "+ academia.getNome());
+                                
                                 break;
                             case 3:
+                            	
                             	String novoEmail = JOptionPane.showInputDialog("Digite o novo email da Academia");
                             	int novoDDD = Integer.parseInt(JOptionPane.showInputDialog("Digite o novo DDD da Academia: "));
                             	int novoNumero = Integer.parseInt(JOptionPane.showInputDialog("Digite o novo Telefone da Academia: "));
@@ -55,8 +61,11 @@ public class SisGym {
                             	academia.setContato(novoContato);
                                 JOptionPane.showMessageDialog(null,"O Telefone da Academia foi alterado para "+ academia.getContato().getTelefone().getDd() + " " + academia.getContato().getTelefone().getNumero());
                                 JOptionPane.showMessageDialog(null, "O Email da Academia foi alterado para "+ academia.getContato().getEmail());
-                                 break;
+                                
+                                break;
+                            
                             case 4:
+                            
                             	String novoLogradouroAcademia = JOptionPane.showInputDialog("Digite o Logradouro da Academia");
                                 int novoNumeroAcademia = Integer.parseInt(JOptionPane.showInputDialog("Digite o Número da Academia"));
                                 String novoComplementoAcademia = JOptionPane.showInputDialog("Digite o Complemento");
@@ -68,20 +77,27 @@ public class SisGym {
                                 academia.setEndereco(novoEdereco);
                                 
                                 break;
+                            
                             case 5:
-                                JOptionPane.showMessageDialog(null, "Você tem R$ " + academia.getContas().getaReceber() + " para receber até o fim do mês.");
-                                break;
+                            
+                            	JOptionPane.showMessageDialog(null, "Você tem R$ " + academia.getContas().getaReceber() + " para receber até o fim do mês.");
+                            
+                            	break;
+                            
                             case 6:
-                                JOptionPane.showMessageDialog(null, "Você tem R$ " + academia.getContas().getaPagar() + " para pagar até o fim do mês.");
-                                break;
+                                
+                            	JOptionPane.showMessageDialog(null, "Você tem R$ " + academia.getContas().getaPagar() + " para pagar até o fim do mês.");
+                                
+                            	break;
+                            
                             case 0:
-                                sairAcademia = true;
+                                sairAcademia = true; //Condição apra voltar ao menu anterior
                         }
                     }
                     break;
 
-                case 2:
-
+                case 2: // Entra no menu de Funcionário
+                	
                     boolean sairFuncionario = false;
                     while (!sairFuncionario) {
                         int escolhaFuncionario = Integer.parseInt(JOptionPane.showInputDialog("Menu Funcionários " + academia.getNome() + "\n"
@@ -94,6 +110,7 @@ public class SisGym {
                         switch (escolhaFuncionario) {
 
                             case 1:
+                            	
                                 int id = Integer.parseInt(JOptionPane.showInputDialog("ID: "));
                                 String nome = JOptionPane.showInputDialog("Nome: ");
                                 String CPF = JOptionPane.showInputDialog("CPF: ");
@@ -101,7 +118,7 @@ public class SisGym {
                                 int numeroTel = Integer.parseInt(JOptionPane.showInputDialog("Número: "));
                                 String emailFun = JOptionPane.showInputDialog("Email: ");
                                 String dataNasciFunc = JOptionPane.showInputDialog("Data de Nascimento: ");
-                                double valor = Double.parseDouble(JOptionPane.showInputDialog("Valor: "));
+                                double valor = Double.parseDouble(JOptionPane.showInputDialog("Salário: "));
                                 String cargaHoraria = JOptionPane.showInputDialog("Carga Horária: ");
                                 
                                 String estadoFunc = JOptionPane.showInputDialog("Estado do funcionário: ");
@@ -112,14 +129,18 @@ public class SisGym {
                                 String bairroFunc = JOptionPane.showInputDialog("Bairro: ");
 
                                 Telefone tel = new Telefone(numeroTel, ddd);
+                                
                                 Contato contato = new Contato(tel,emailFun);
+                                
                                 Endereco enderecoFunc = new Endereco(logradouroFunc, numeroFunc, complementoFunc, bairroFunc, cidadeFunc, estadoFunc);
+                                
                                 Funcionario f = new Funcionario(id, nome, CPF,contato,enderecoFunc,dataNasciFunc, valor, cargaHoraria);
+                                
                                 academia.cadastrarFuncionario(f);
 
                                 break;
 
-                            case 2:
+                            case 2: //Esta opção vai listar todos os funcionários cadastrados na academia
 
                                 String lista = "Lista de Funcionários da Academia " + academia.getNome() + ":\n";
                                 for (Funcionario l : academia.getFuncionarios()) {
@@ -128,7 +149,9 @@ public class SisGym {
                                 JOptionPane.showMessageDialog(null, lista);
 
                                 break;
-                            case 3:
+                            
+                            case 3: //Esta opção vai listar todos os funcionários que ainda não receberam o salário
+                            	
                                 String listaFuncionariosPagar = "Lista de Funcionários a pagar: \n";
                                 for (Funcionario fp : academia.getFuncionarios()) {
                                     if (!fp.isPagamento()) {
@@ -136,15 +159,20 @@ public class SisGym {
                                     }
                                 }
                                 JOptionPane.showMessageDialog(null, listaFuncionariosPagar);
+                                
                                 break;
 
-                            case 4:
-                                String cpfFuncionarioAPagar = JOptionPane.showInputDialog("CPF: ");
+                            case 4: //Esta opção vai dar baixa no pagamento do funcionário
+                                
+                            	String cpfFuncionarioAPagar = JOptionPane.showInputDialog("CPF: ");
                                 JOptionPane.showMessageDialog(null, academia.pagarFuncionario(cpfFuncionarioAPagar));
+                                
                                 break;
 
                             case 0:
-                                sairFuncionario = true;
+                                
+                            	sairFuncionario = true;
+                                
                                 break;
 
                         }
